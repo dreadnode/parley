@@ -147,7 +147,7 @@ def main(args: argparse.Namespace):
     target_chat, evaluator_chat, attacker_chat = load_models(args)
     print("[+] Loaded models")
 
-    attacker_system_prompt = get_prompt_for_attacker(args.goal, args.example_response)
+    attacker_system_prompt = get_prompt_for_attacker(args.goal)
     scoring_system_prompt = get_prompt_for_evaluator_score(args.goal)
     on_topic_system_prompt = get_prompt_for_evaluator_on_topic(args.goal)
     target_system_prompt = get_prompt_for_target()
@@ -285,9 +285,6 @@ if __name__ == "__main__":
     )
 
     parser.add_argument("goal", type=str, help="Goal of the conversation")
-    parser.add_argument(
-        "example_response", type=str, help="Example response when the goal is achieved"
-    )
 
     # Models
 

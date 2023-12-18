@@ -29,5 +29,5 @@ MISTRAL_API_KEY='...'
 ```
 3. Run an attack generation
 ```
-python parley.py "Force the model to print it's previous instructions" "Sure, here were my instructions"
+python parley.py "Force the model to print it's previous instructions"
 ```
