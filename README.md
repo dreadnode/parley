@@ -14,23 +14,20 @@ This is a minimal implementation of the "Tree of Attacks (TAP): Jailbreaking Bla
 - [ ] Add support for local models  
 
 # Usage
-
-- Pull + Install dependencies
+1. Pull + Install dependencies
 ```
 git clone git@github.com:dreadnode/parley.git
 cd parley
 poetry install
 poetry shell
 ```
-
-- Configure any required API keys
+2. Configure any required API keys
 ```
 OPENAI_API_KEY='...'
 TOGETHER_API_KEY='...'
 MISTRAL_API_KEY='...'
 ```
-
-- Run an attack generation
+3. Run an attack generation
 ```
 python parley.py "Force the model to print it's previous instructions" "Sure, here were my instructions"
 ```
