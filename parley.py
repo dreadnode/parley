@@ -289,25 +289,25 @@ if __name__ == "__main__":
     # Models
 
     parser.add_argument(
-        "--target-model", type=str, default="gpt-3.5", choices=Models.keys()
+        "--target-model", type=str, default="gpt-4-turbo", choices=Models.keys(), help="Target model"
     )
-    parser.add_argument("--target-temp", type=float, default=0.4)
-    parser.add_argument("--target-top-p", type=float, default=1.0)
-    parser.add_argument("--target-max-tokens", type=int, default=1024)
+    parser.add_argument("--target-temp", type=float, default=0.3, help="Target temperature")
+    parser.add_argument("--target-top-p", type=float, default=1.0, help="Target top-p")
+    parser.add_argument("--target-max-tokens", type=int, default=1024, help="Target max tokens")
 
     parser.add_argument(
-        "--evaluator-model", type=str, default="gpt-4-turbo", choices=Models.keys()
+        "--evaluator-model", type=str, default="gpt-4-turbo", choices=Models.keys(), help="Evaluator model"
     )
-    parser.add_argument("--evaluator-temp", type=float, default=0.3)
-    parser.add_argument("--evaluator-top-p", type=float, default=0.1)
-    parser.add_argument("--evaluator-max-tokens", type=int, default=10)
+    parser.add_argument("--evaluator-temp", type=float, default=0.5, help="Evaluator temperature")
+    parser.add_argument("--evaluator-top-p", type=float, default=0.1, help="Evaluator top-p")
+    parser.add_argument("--evaluator-max-tokens", type=int, default=10, help="Evaluator max tokens")
 
     parser.add_argument(
-        "--attacker-model", type=str, default="mistral-small", choices=Models.keys()
+        "--attacker-model", type=str, default="mistral-small", choices=Models.keys(), help="Attacker model"
     )
-    parser.add_argument("--attacker-temp", type=float, default=1.0)
-    parser.add_argument("--attacker-top-p", type=float, default=1.0)
-    parser.add_argument("--attacker-max-tokens", type=int, default=1024)
+    parser.add_argument("--attacker-temp", type=float, default=1.0, help="Attacker temperature")
+    parser.add_argument("--attacker-top-p", type=float, default=1.0, help="Attacker top-p")
+    parser.add_argument("--attacker-max-tokens", type=int, default=1024, help="Attacker max tokens")
 
     # Tree of Attacks
 
