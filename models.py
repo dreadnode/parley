@@ -27,8 +27,12 @@ def _chat_openai(
 
 
 def chat_openai(messages: t.List[Message], parameters: Parameters) -> Message:
-    return _chat_openai(OpenAI(), messages, parameters)
+    client = openai.OpenAI(
+        api_key=os.environ["OPENAI_API_KEY"],
+        base_url=os.environ.get("OPENAI_API_BASE","https://api.openai.com/v1"),
+    )
 
+    return _chat_openai(client, messages, parameters)
 
 def chat_mistral(
     messages: t.List[Message], parameters: Parameters
